@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Logic">
+      <UniqueIdentifier>{64ae871f-0737-4553-a9f0-da4935533ed6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Logic\DataStructures">
+      <UniqueIdentifier>{9529fd71-23ad-4713-ac48-f2fc1cacb5be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Logic\DataStructures\GraphDS">
+      <UniqueIdentifier>{e4778b79-5618-4aba-9213-61c5a0ec45e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI">
+      <UniqueIdentifier>{569e1727-464d-4605-8551-b6649da196eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Logic">
+      <UniqueIdentifier>{a602328a-13d8-43e8-870f-a05473ef8644}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Logic\DataStructures">
+      <UniqueIdentifier>{1a4c91f0-c81c-4554-861c-425662f9bd16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Logic\DataStructures\GraphDS">
+      <UniqueIdentifier>{42aa4b60-9f42-432a-bc51-77284a3b6e4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI">
+      <UniqueIdentifier>{4440c1f7-e488-4b11-b7c9-904737a4370f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Program.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph.h">
+      <Filter>Header Files\Logic\DataStructures\GraphDS</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>Header Files\Logic\DataStructures\GraphDS</Filter>
+    </ClInclude>
+    <ClInclude Include="Adjacent.h">
+      <Filter>Header Files\Logic\DataStructures\GraphDS</Filter>
+    </ClInclude>
+    <ClInclude Include="AdjointSets.h">
+      <Filter>Header Files\Logic\DataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryTree.h">
+      <Filter>Header Files\Logic\DataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="AlgoRunner.h">
+      <Filter>Header Files\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Communicator.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AdjointSets.cpp">
+      <Filter>Source Files\Logic\DataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryTree.cpp">
+      <Filter>Source Files\Logic\DataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph.cpp">
+      <Filter>Source Files\Logic\DataStructures\GraphDS</Filter>
+    </ClCompile>
+    <ClCompile Include="Adjacent.cpp">
+      <Filter>Source Files\Logic\DataStructures\GraphDS</Filter>
+    </ClCompile>
+    <ClCompile Include="Vertex.cpp">
+      <Filter>Source Files\Logic\DataStructures\GraphDS</Filter>
+    </ClCompile>
+    <ClCompile Include="AlgoRunner.cpp">
+      <Filter>Source Files\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Communicator.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Program.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
