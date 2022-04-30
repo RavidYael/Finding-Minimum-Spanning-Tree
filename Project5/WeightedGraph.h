@@ -1,0 +1,29 @@
+#pragma once
+#include "Vertex.h"
+#include "Edge.h"
+#include <vector>
+using namespace std;
+
+
+class WeightedGraph
+{
+private:
+	int m_NumberOfVertexes;
+	int m_NumberOfEdges;
+	vector<Edge> m_Edges;
+	vector<Vertex> m_Vertexes;
+
+public:
+	WeightedGraph(int i_NumberOfVertx, int i_NumberOfEdges);
+	~WeightedGraph();
+	void makeEmpty();
+	bool IsAdjacent(Vertex i_src, Vertex i_dest);
+	void AddAdj(Vertex i_src, Vertex i_dest, int i_AdjWeight);
+	void RemoveAdj(Vertex i_src, Vertex i_dest);
+	const vector<Edge> GetAllEdges() { return m_Edges; }
+	const vector<Vertex> GetAllVertexes() { return m_Vertexes; }
+	int GetNumberOfVertexes() {	return m_NumberOfVertexes; }
+	
+
+};
+
