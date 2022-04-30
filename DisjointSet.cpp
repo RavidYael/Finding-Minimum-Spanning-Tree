@@ -5,16 +5,12 @@
 #include "DisjointSet.h"
 
 
-DisjointSet::DisjointSet(int numOfElements){
+DisjointSet::DisjointSet(int numOfElements){//TODO make changes after vector change!
     this->TreeForest = new UfElement[numOfElements];
     for(int i = 0; i < numOfElements; i++){
         TreeForest[i].setParent(-1);
         TreeForest[i].setSize(0);
     }
-}
-
-DisjointSet::~DisjointSet() {
-    delete[] TreeForest;
 }
 
 void DisjointSet::MakeSet(int v) {

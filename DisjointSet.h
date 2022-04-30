@@ -6,17 +6,16 @@
 #define FINDING_MINIMUM_SPANNING_TREE_DISJOINTSET_H
 #include <iostream>
 #include "UfElement.h"
-
+#include <vector>
 using namespace std;
 
 class DisjointSet {
 private:
-   UfElement* TreeForest;
+   vector<UfElement> TreeForest;
 
 public:
     DisjointSet(int numOfElements);
-
-    virtual ~DisjointSet();
+    virtual ~DisjointSet() = default;
 
     void MakeSet(int v);
     void Union(int v,int u);
