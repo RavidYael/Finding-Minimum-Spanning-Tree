@@ -1,5 +1,27 @@
 #pragma once
 class Vertex
 {
+private:
+	vector<Vertex> m_AdjacentInGraph;
+	vector<Edge> m_AllOutEdges;
+	Vertex m_AdjacentInSpanningTree = nullptr;
+	Edge m_EdgeConnectInSpanningTree;
+	int m_MinWeightOfEdgeConnect = INFINITY;
+	bool m_InTree = false;
+
+public:
+	void SetInTree() { m_InTree = true; }
+	vector<Edge> GetAllOutEdges() { return m_AllOutEdges; }
+	bool NotInTree() { return m_InTree == false; }
+	int GetMinWeightOfEdgeConnect() { return m_MinWeightOfEdgeConnect; }
+	void SetMinWeightOfEdgeConnect(int i_NewMinWeight) { m_MinWeightOfEdgeConnect = i_NewMinWeight; }
+	void SetAdjacentInSpanningTree(Vertex& i_AdjacentInGraph, Edge& i_EdgeBetweenAdjacents) { m_AdjacentInSpanningTree = i_AdjacentInGraph;
+																							  m_EdgeConnectInSpanningTree = i_EdgeBetweenAdjacents;}
+	Edge GetEdgeConnctInSpanningTree() { return m_EdgeConnectInSpanningTree; }
+	
+
+
+
+
 };
 
