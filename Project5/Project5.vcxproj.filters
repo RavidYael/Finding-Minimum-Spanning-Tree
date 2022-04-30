@@ -42,17 +42,8 @@
     <ClInclude Include="Program.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Graph.h">
-      <Filter>Header Files\Logic\DataStructures\GraphDS</Filter>
-    </ClInclude>
     <ClInclude Include="Vertex.h">
       <Filter>Header Files\Logic\DataStructures\GraphDS</Filter>
-    </ClInclude>
-    <ClInclude Include="Adjacent.h">
-      <Filter>Header Files\Logic\DataStructures\GraphDS</Filter>
-    </ClInclude>
-    <ClInclude Include="AdjointSets.h">
-      <Filter>Header Files\Logic\DataStructures</Filter>
     </ClInclude>
     <ClInclude Include="BinaryTree.h">
       <Filter>Header Files\Logic\DataStructures</Filter>
@@ -63,19 +54,22 @@
     <ClInclude Include="Communicator.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
+    <ClInclude Include="DisjointSets.h">
+      <Filter>Header Files\Logic\DataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="Edge.h">
+      <Filter>Header Files\Logic\DataStructures\GraphDS</Filter>
+    </ClInclude>
+    <ClInclude Include="EdgeSet.h">
+      <Filter>Header Files\Logic\DataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="WeightedGraph.h">
+      <Filter>Header Files\Logic\DataStructures\GraphDS</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AdjointSets.cpp">
-      <Filter>Source Files\Logic\DataStructures</Filter>
-    </ClCompile>
     <ClCompile Include="BinaryTree.cpp">
       <Filter>Source Files\Logic\DataStructures</Filter>
-    </ClCompile>
-    <ClCompile Include="Graph.cpp">
-      <Filter>Source Files\Logic\DataStructures\GraphDS</Filter>
-    </ClCompile>
-    <ClCompile Include="Adjacent.cpp">
-      <Filter>Source Files\Logic\DataStructures\GraphDS</Filter>
     </ClCompile>
     <ClCompile Include="Vertex.cpp">
       <Filter>Source Files\Logic\DataStructures\GraphDS</Filter>
@@ -88,6 +82,18 @@
     </ClCompile>
     <ClCompile Include="Program.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DisjointSets.cpp">
+      <Filter>Source Files\Logic\DataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="Edge.cpp">
+      <Filter>Source Files\Logic\DataStructures\GraphDS</Filter>
+    </ClCompile>
+    <ClCompile Include="EdgeSet.cpp">
+      <Filter>Source Files\Logic\DataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="WeightedGraph.cpp">
+      <Filter>Source Files\Logic\DataStructures\GraphDS</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
