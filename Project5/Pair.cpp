@@ -8,22 +8,13 @@ int Pair::getKey() const {
     return Key;
 }
 
-int Pair::getIndexInHeapArr() const {
+/*int Pair::getIndexInHeapArr() const {
     return indexInHeapArr;
+}*///TODO check if needed if not can be deleted
+
+void Pair::initializePairFromVertex(Vertex vertex){
+    this->vertex = vertex;
+    this->Key = vertex.getVertexNumber();
+    this->Priority = vertex.getMinWeightOfEdgeConnect();
 }
 
-void Pair::setKey(int key) {
-    Key = key;
-}
-
-void Pair::setIndexInHeapArr(int indexInHeapArr) {
-    Pair::indexInHeapArr = indexInHeapArr;
-}
-
-int Pair::getPriority() const {
-    return Priority;
-}
-
-void Pair::setPriority(int priority) {
-    Priority = priority;
-}
