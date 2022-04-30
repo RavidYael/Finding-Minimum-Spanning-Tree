@@ -3,10 +3,13 @@
 class BinaryTree
 {
 private:
+	int m_NumberOfVertexInTree;
+public:
 	BinaryTree();
 	~BinaryTree();
-	void Bulid(Vertex* i_ArrToHeap); //TO FIX
-	bool isEmpty();
-	void DecreaseKey(int i_IndexOfKey, int i_NewKey);
+	void Build(vector<Vertex> i_ArrToHeap); //TO FIX
+	void DecreaseKey(int i_KeyValue);
+	Vertex DeleteMin();
+	bool IsNotEmpty() { return m_NumberOfVertexInTree != 0; }
 };
 
