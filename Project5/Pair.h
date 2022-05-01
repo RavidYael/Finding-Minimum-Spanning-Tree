@@ -13,7 +13,7 @@ private:
     Vertex vertex;
     //int indexInHeapArr;TODO not sure if needed
 public:
-    Pair() = default;
+    Pair();
     ~Pair() = default;
     //Getters
     int getKey() const;
@@ -22,6 +22,8 @@ public:
 
     //Setters
     void initializePairFromVertex(Vertex vertex);
+
+    void setPriority(int priority);
 
 };
 

@@ -18,3 +18,15 @@ void Pair::initializePairFromVertex(Vertex vertex){
     this->Priority = vertex.getMinWeightOfEdgeConnect();
 }
 
+void Pair::setPriority(int priority) {
+    Priority = priority;
+    //TODO cant change lightest connective weight of vertex not sure if necessary so for now i will leave it that way (change just the pair priority)
+
+}
+
+Pair::Pair(){
+    Key = 0;
+    Priority = INT32_MAX;
+    vertex = nullptr;
+}
+

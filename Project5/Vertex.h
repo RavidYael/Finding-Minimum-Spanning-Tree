@@ -9,9 +9,9 @@ private:
     int m_VertexNumber;
 	vector<Vertex> m_AdjacentInGraph;
 	vector<Edge> m_AllOutEdges;
-	Vertex m_AdjacentInSpanningTree = nullptr;
+	Vertex m_AdjacentInSpanningTree;//TODO it should be static because its the same obeject as the class object not sure if it is ok;
 	Edge m_EdgeConnectInSpanningTree;
-	int m_MinWeightOfEdgeConnect = INFINITY;//TODO change to int32_max
+	int m_MinWeightOfEdgeConnect = INT32_MAX;
 	bool m_InTree = false;
 
 public:

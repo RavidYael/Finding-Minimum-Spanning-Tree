@@ -92,7 +92,7 @@ vector<Edge> AlgoRunner::Prim(WeightedGraph& i_Graph)
                 adjacent.SetMinWeightOfEdgeConnect(outEdge.GetWeight());
                 adjacent.SetAdjacentInSpanningTree(currentVertexWithMinWeightOfInedge);
                 adjacent.SetEdgeConnectInSpanningTree(outEdge);
-                minWeightOfInEdgeHeap.DecreaseKey(outEdge.GetWeight());
+                minWeightOfInEdgeHeap.DecreaseKey(outEdge.GetWeight());//TODO  #ravid change here that this method will get (name of vertex 1 - n,new weight);
             }
         }
     }
