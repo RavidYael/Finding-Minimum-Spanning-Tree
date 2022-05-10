@@ -18,7 +18,7 @@ public:
     virtual ~DisjointSet() = default;
 
     void MakeSet(int v);
-    void Union(int v,int u);
+    void UnionBySize(int v, int u);
     int Find(int v);
 
 };

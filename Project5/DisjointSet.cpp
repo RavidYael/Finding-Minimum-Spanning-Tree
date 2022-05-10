@@ -6,10 +6,11 @@
 
 
 DisjointSet::DisjointSet(int numOfElements){//TODO make changes after vector change!
-    this->TreeForest = new UfElement[numOfElements];
+    UfElement vertex;
     for(int i = 0; i < numOfElements; i++){
-        TreeForest[i].setParent(-1);
-        TreeForest[i].setSize(0);
+        vertex.setSize(0);
+        vertex.setParent(-1);
+        TreeForest.push_back(vertex);
     }
 }
 
@@ -18,7 +19,7 @@ void DisjointSet::MakeSet(int v) {
     TreeForest[v].setSize(1);
 }
 
-void DisjointSet::Union(int RepV,int RepU){
+void DisjointSet::UnionBySize(int RepV, int RepU){
     int RepBiggerInSize,RepSmallerInSize;
     if(TreeForest[RepV].getSize() > TreeForest[RepU].getSize()){
         RepBiggerInSize = RepV;

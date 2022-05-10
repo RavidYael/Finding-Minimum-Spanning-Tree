@@ -3,6 +3,10 @@
 using namespace std;
 #include <vector>
 #include "WeightedGraph.h"
+#include "DisjointSet.h"
+#include "MinHeap.h"
+#include <iostream>
+#include "WeightedGraph.h"
 
 
 class AlgoRunner

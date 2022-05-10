@@ -4,15 +4,16 @@
 
 #ifndef FINDING_MINIMUM_SPANNING_TREE_PAIR_H
 #define FINDING_MINIMUM_SPANNING_TREE_PAIR_H
-
+#include "Vertex.h"
 
 class Pair {
 private:
     int Key;//Name of vertex
     int Priority;//Lightest Connective Edge from this vertex into the minimal Spanning tree
-    int indexInHeapArr;
+    Vertex vertex;
+    //int indexInHeapArr;TODO not sure if needed
 public:
-    Pair() = default;
+    Pair();
     ~Pair() = default;
     //Getters
     int getKey() const;
@@ -20,9 +21,9 @@ public:
     int getIndexInHeapArr() const;
 
     //Setters
-    void setKey(int key);
+    void initializePairFromVertex(Vertex vertex);
+
     void setPriority(int priority);
-    void setIndexInHeapArr(int indexInHeapArr);
 
 };
 
