@@ -13,7 +13,6 @@ int Pair::getKey() const {
 }*///TODO check if needed if not can be deleted
 
 void Pair::initializePairFromVertex(Vertex vertex){
-    this->vertex = vertex;
     this->Key = vertex.getVertexNumber();
     this->Priority = vertex.getMinWeightOfEdgeConnect();
 }

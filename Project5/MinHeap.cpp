@@ -31,7 +31,7 @@ void MinHeap::BuildHeap(vector<Vertex> graphVertexes) {
     }
 }
 
-void MinHeap::ConvertVertexesIntoPair(vector<Vertex> graphVertexes){
+void MinHeap::ConvertVertexesIntoPairAndBuildHeapArr(vector<Vertex> graphVertexes){
     int counter = 0;
     for(Vertex curVertex:graphVertexes){
         data[counter].initializePairFromVertex(curVertex);
