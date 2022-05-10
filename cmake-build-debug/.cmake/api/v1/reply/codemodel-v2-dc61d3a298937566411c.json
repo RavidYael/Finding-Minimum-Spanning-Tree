@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Finding_Minimum_Spanning_Tree",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Finding_Minimum_Spanning_Tree::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Finding_Minimum_Spanning_Tree-Debug-6bd7dd495b3414e53869.json",
+					"name" : "Finding_Minimum_Spanning_Tree",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/dan/Documents/cs_101/2st_year/Algorithms/Finding-Minimum-Spanning-Tree/cmake-build-debug",
+		"source" : "/Users/dan/Documents/cs_101/2st_year/Algorithms/Finding-Minimum-Spanning-Tree"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

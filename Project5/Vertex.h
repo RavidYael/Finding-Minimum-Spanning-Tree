@@ -1,13 +1,18 @@
 #pragma once
+
+#include "Edge.h"
+#include "vector"
+using namespace std;
 class Vertex
 {
 private:
 	int m_VertexNumber;
+
 	vector<Vertex> m_AdjacentInGraph;
 	vector<Edge> m_AllOutEdges;
-	Vertex m_AdjacentInSpanningTree = nullptr;
-	Edge m_EdgeConnectInSpanningTree;
-	int m_MinWeightOfEdgeConnect = INFINITY;
+	Vertex m_AdjacentsInSpanningTree; 
+  Edge m_EdgeConnectInSpanningTree;
+	int m_MinWeightOfEdgeConnect = INT32_MAX;
 	bool m_InTree = false;
 
 public:
@@ -21,9 +26,5 @@ public:
 	Edge GetEdgeConnctInSpanningTree() { return m_EdgeConnectInSpanningTree; }
 	int GetName() { return m_VertexNumber; }
 	void SetName(int i_Name) { m_VertexNumber = i_Name; }
-
-
-
-
 };
 
