@@ -2,6 +2,7 @@
 class Vertex
 {
 private:
+	int m_VertexNumber;
 	vector<Vertex> m_AdjacentInGraph;
 	vector<Edge> m_AllOutEdges;
 	Vertex m_AdjacentInSpanningTree = nullptr;
@@ -18,7 +19,8 @@ public:
 	void SetAdjacentInSpanningTree(Vertex& i_AdjacentInGraph, Edge& i_EdgeBetweenAdjacents) { m_AdjacentInSpanningTree = i_AdjacentInGraph;
 																							  m_EdgeConnectInSpanningTree = i_EdgeBetweenAdjacents;}
 	Edge GetEdgeConnctInSpanningTree() { return m_EdgeConnectInSpanningTree; }
-	
+	int GetName() { return m_VertexNumber; }
+	void SetName(int i_Name) { m_VertexNumber = i_Name; }
 
 
 
