@@ -1,4 +1,8 @@
 #include "AlgoRunner.h"
+#include <iostream>
+#include "DisjointSets.h"
+#include "WeightedGraph.h"
+
 
 using namespace std;
 
@@ -50,6 +54,53 @@ void AlgoRunner::QuickSort(vector<Edge>& i_EdgeArray, int i_LeftIndex, int i_Rig
     QuickSort(i_EdgeArray, p + 1, i_RightIndex);
 }
 
+bool AlgoRunner::IsConnectedCompont(WeightedGraph& i_Graph)
+{
+    vector<bool> visitedVertxes;
+    visitedVertxes.reserve(i_Graph.GetNumberOfVertexes());
+    
+    DFS(i_Graph, visitedVertxes);
+    
+    return IsAllVertexesVisitedDuringDFS(visitedVertxes);
+
+}
+
+void AlgoRunner::DFSUtil(Vertex i_CurrentVertex, vector<bool> i_VisitedVertexes)
+{
+    // Mark the current node as visited
+    i_VisitedVertexes[i_CurrentVertex.GetName()] = true;
+
+    // Recur for all the vertices adjacent to this vertex
+    vector<Edge>::iterator EdgeToAdjacent;
+    for (EdgeToAdjacent = i_CurrentVertex.GetAllOutEdges().begin(); EdgeToAdjacent != i_CurrentVertex.GetAllOutEdges().end(); ++EdgeToAdjacent)
+        if (!i_VisitedVertexes[(*EdgeToAdjacent).GetDest().GetName()])
+            DFSUtil((*EdgeToAdjacent).GetDest(), i_VisitedVertexes);
+}
+
+
+// The function to do DFS traversal. It uses recursive
+// DFSUtil()
+bool AlgoRunner::DFS(WeightedGraph& i_TheGraph, vector<bool> i_VisitedVertexes)
+{
+    for (Edge edge : i_TheGraph.GetAllEdges())
+        if (i_VisitedVertexes[edge.GetSrc().GetName()] == false)
+            DFSUtil(edge.GetSrc(), i_VisitedVertexes);
+}
+
+bool AlgoRunner::IsAllVertexesVisitedDuringDFS(vector<bool> i_VisitedVertexAfterDFS) {
+    bool graphIsConnectedCompont = true;
+
+    for (bool isVertexVisited : i_VisitedVertexAfterDFS) {
+        if (isVertexVisited != true) {
+            graphIsConnectedCompont = false;
+            break;
+        }
+    }
+   
+    return graphIsConnectedCompont;
+   
+}
+
 vector<Edge> AlgoRunner::Kruskal(WeightedGraph& i_Graph)
 {
     vector<Edge> spaningTreeByEdges;
@@ -68,7 +119,7 @@ vector<Edge> AlgoRunner::Kruskal(WeightedGraph& i_Graph)
     {
         Vertex src = edgeInGraph.GetSrc();
         Vertex dest = edgeInGraph.GetDest();
-        if (connectionComponentsInGraph.Find(src) != connectionComponentsInGraph.Find(dest))
+        if (connectionComponentsInGraph.Find(src).GetName() != connectionComponentsInGraph.Find(dest).GetName())
         {
             spaningTreeByEdges.push_back(edgeInGraph);
             connectionComponentsInGraph.UnionBySize(src, dest);

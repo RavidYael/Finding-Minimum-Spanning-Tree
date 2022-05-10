@@ -142,9 +142,7 @@
     <ClInclude Include="Edge.h" />
     <ClInclude Include="DisjointSets.h" />
     <ClInclude Include="AlgoRunner.h" />
-    <ClInclude Include="BinaryTree.h" />
     <ClInclude Include="Communicator.h" />
-    <ClInclude Include="EdgeSet.h" />
     <ClInclude Include="WeightedGraph.h" />
     <ClInclude Include="Program.h" />
     <ClInclude Include="Vertex.h" />
@@ -153,9 +151,7 @@
     <ClCompile Include="Edge.cpp" />
     <ClCompile Include="DisjointSets.cpp" />
     <ClCompile Include="AlgoRunner.cpp" />
-    <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="Communicator.cpp" />
-    <ClCompile Include="EdgeSet.cpp" />
     <ClCompile Include="WeightedGraph.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="Vertex.cpp" />
