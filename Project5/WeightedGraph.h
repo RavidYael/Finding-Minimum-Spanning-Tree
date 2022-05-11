@@ -13,6 +13,8 @@ private:
 	vector<Vertex> m_Vertexes;
 
 public:
+	WeightedGraph() = default;
+	WeightedGraph(int i_NumberOfVertexes, int i_NumberOfEdges);
 	void AddEdge(int i_src,int i_dest, int i_AdjWeight);
 	const vector<Edge> GetAllEdges() { return m_Edges; }
 	const vector<Vertex> GetAllVertexes() { return m_Vertexes; }

@@ -11,7 +11,6 @@ class Vertex
 {
 private:
 	int m_VertexNumber;
-
 	vector<Vertex> m_AdjacentInGraph;
 	vector<Pair> m_AdjacentAndConnectingEdgeInGraph;
 	vector<Edge> m_AllOutEdges;
@@ -21,6 +20,7 @@ private:
 	bool m_InTree = false;
 
 public:
+	Vertex(int i_NameOfVertex);
 	void SetInTree() { m_InTree = true; }
 	vector<Edge> GetAllOutEdges() { return m_AllOutEdges; }
 	bool NotInTree() { return m_InTree == false; }
