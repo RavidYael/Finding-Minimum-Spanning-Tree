@@ -13,7 +13,6 @@ Communicator::~Communicator() {
     }
 }
 
-
 vector<int> Communicator::ReadGraphDetailsFromFile() {//TODO  validate that all edges data is valid int and not float  etc.
     int tmpEdgeData, numOfEdges;
     vector<int> edgesData;
@@ -35,8 +34,5 @@ vector<int> Communicator::ReadGraphDetailsFromFile() {//TODO  validate that all 
      if(inputFile.peek() != EOF){
          //TODO to much data in file we need to throw exception.
      }
-  
      return edgesData;
 }
-
-
