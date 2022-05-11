@@ -108,7 +108,7 @@ vector<Edge> AlgoRunner::Kruskal(WeightedGraph& i_Graph)
     
     QuickSort(sortedByWeightEdges, 0, sortedByWeightEdges.size());
 
-    for (Vertex vertrxInGraph : allVertexesInGraph)
+    for (Vertex vertexInGraph : allVertexesInGraph)
     {
         connectionComponentsInGraph.MakeSet(vertrxInGraph.GetName());
     }
@@ -119,11 +119,11 @@ vector<Edge> AlgoRunner::Kruskal(WeightedGraph& i_Graph)
         int dest = edgeInGraph.GetDest();
         if (connectionComponentsInGraph.Find(src) != connectionComponentsInGraph.Find(dest))
         {
-            spaningTreeByEdges.push_back(edgeInGraph);
+            spanningTreeByEdges.push_back(edgeInGraph);
             connectionComponentsInGraph.UnionBySize(src, dest);
         }
     }
-    return spaningTreeByEdges;
+    return spanningTreeByEdges;
 }
 
 vector<Edge> AlgoRunner::Prim(WeightedGraph& i_Graph)

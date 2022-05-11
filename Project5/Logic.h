@@ -6,10 +6,8 @@
 #ifndef FINDING_MINIMUM_SPANNING_TREE_LOGIC_H
 #define FINDING_MINIMUM_SPANNING_TREE_LOGIC_H
 
-#include <iostream>
 #include "AlgoRunner.h"
 
-using namespace std;
 
 static class Logic {
 private:
