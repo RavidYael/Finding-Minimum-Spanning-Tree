@@ -1,6 +1,7 @@
 //
 // Created by Dan Schindler on 10/05/2022.
 //
+#pragma once
 
 #ifndef FINDING_MINIMUM_SPANNING_TREE_LOGIC_H
 #define FINDING_MINIMUM_SPANNING_TREE_LOGIC_H
@@ -8,13 +9,13 @@
 #include "AlgoRunner.h"
 
 
-class Logic {
+static class Logic {
 private:
     WeightedGraph m_undirectedWeightedGraph;
     AlgoRunner m_algoRunner;
 
 public:
-    void buildGraphFromEdgeDataArray(vector<int> edgeData,int numOfEdges,int numOfVertexes);
+    void buildGraphFromEdgeDataArray(vector<int> edgeData);
     void runAlgoRunner();
 };
 

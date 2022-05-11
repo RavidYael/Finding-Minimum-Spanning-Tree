@@ -1,9 +1,8 @@
 #pragma once
-#include "Vertex.h"
-#include "Edge.h"
 #include <vector>
-#include "VertexInAdjacentList.h"
-#include <iostream>
+
+#include "Vertex.h"
+
 using namespace std;
 
 
@@ -17,19 +16,18 @@ private:
     vector<Vector<VertexInAdjacentList>> m_Graph;
 
 public:
-    //Ctor
-    WeightedGraph(int mNumberOfVertexes, int mNumberOfEdges) : m_NumberOfVertexes(mNumberOfVertexes),m_NumberOfEdges(mNumberOfEdges) {}
-    //Dtor
-    ~WeightedGraph() = default;
-	//void makeEmpty();TODO i dont think we need it
+  
 	bool IsAdjacent(Vertex i_src, Vertex i_dest);//TODO do we use this method at all? if not to delete it.
+	WeightedGraph() = default;
+	WeightedGraph(int i_NumberOfVertexes, int i_NumberOfEdges);
+~WeightedGraph() = default;
 	void AddEdge(int i_src,int i_dest, int i_AdjWeight);
-	void RemoveAdj(Vertex i_src, Vertex i_dest);
 	const vector<Edge> GetAllEdges() { return m_Edges; }
 	const vector<Vertex> GetAllVertexes() { return m_Vertexes; }
 	int GetNumberOfVertexes() {	return m_NumberOfVertexes; }
-    void SetNumberOfVertexes(int numOfVertexes){ m_NumberOfVertexes = numOfVertexes};
-    void SetNumberOfEdges(int numOfEdges){m_NumberOfEdges = numOfEdges};
+	void SetNumberOfVertexes(int numOfVertexes) { m_NumberOfVertexes = numOfVertexes; }
+	void SetNumberOfEdges(int numOfEdges) { m_NumberOfEdges = numOfEdges; }
+	Vertex GetVertexByName(int i_VertexNumber) { return m_Vertexes[i_VertexNumber]; }
 	
 
 };

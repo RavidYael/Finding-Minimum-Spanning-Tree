@@ -4,9 +4,10 @@
 #include "Logic.h"
 
 void Logic::buildGraphFromEdgeDataArray(vector<int> edgeData){
-    int = counter = 2;
+    int counter = 2;
     m_undirectedWeightedGraph.SetNumberOfEdges(edgeData[0]);
     m_undirectedWeightedGraph.SetNumberOfVertexes(edgeData[1]);
+    int numOfEdges = edgeData[1];
     for(int i = 0; i < numOfEdges; i++){
         m_undirectedWeightedGraph.AddEdge(edgeData[counter],edgeData[counter + 1],edgeData[counter + 2]);
         m_undirectedWeightedGraph.AddEdge(edgeData[counter + 1],edgeData[counter],edgeData[counter + 2]);

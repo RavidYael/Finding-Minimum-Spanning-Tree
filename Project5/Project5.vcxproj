@@ -139,27 +139,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DisjointSet.h" />
     <ClInclude Include="Edge.h" />
-    <ClInclude Include="DisjointSets.h" />
     <ClInclude Include="AlgoRunner.h" />
     <ClInclude Include="Communicator.h" />
+    <ClInclude Include="Logic.h" />
     <ClInclude Include="MinHeap.h" />
     <ClInclude Include="Pair.h" />
     <ClInclude Include="UfElement.h" />
     <ClInclude Include="WeightedGraph.h" />
-    <ClInclude Include="Program.h" />
     <ClInclude Include="Vertex.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DisjointSet.cpp" />
     <ClCompile Include="Edge.cpp" />
-    <ClCompile Include="DisjointSets.cpp" />
     <ClCompile Include="AlgoRunner.cpp" />
     <ClCompile Include="Communicator.cpp" />
+    <ClCompile Include="Logic.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="MinHeap.cpp" />
     <ClCompile Include="Pair.cpp" />
     <ClCompile Include="UfElement.cpp" />
     <ClCompile Include="WeightedGraph.cpp" />
-    <ClCompile Include="Program.cpp" />
     <ClCompile Include="Vertex.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

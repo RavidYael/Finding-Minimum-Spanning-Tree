@@ -1,7 +1,5 @@
 #include "WeightedGraph.h"
 
-
-
 bool WeightedGraph::IsAdjacent(Vertex i_src, Vertex i_dest) {
     vector<VertexInAdjacentList> adjacent = m_Graph[i_src.GetName()];
     for(VertexInAdjacentList curVer : adjacent){
@@ -27,3 +25,13 @@ void WeightedGraph::AddEdge(int i_src, int i_dest, int i_AdjWeight) {
 //        }
 //    }
 //}
+
+
+WeightedGraph::WeightedGraph(int i_NumberOfVertexes, int i_NumberOfEdges)
+{
+	m_NumberOfVertexes = i_NumberOfVertexes;
+	m_NumberOfEdges = i_NumberOfEdges;
+	for (int numOfVertex = 1; numOfVertex <= m_NumberOfVertexes; numOfVertex++) {
+		m_Vertexes.push_back(Vertex(numOfVertex));
+	}
+}

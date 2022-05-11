@@ -3,18 +3,24 @@
 //
 
 #include "Pair.h"
+#include <cstdint>
 
 int Pair::getKey() const {
     return Key;
+}
+
+int Pair::getPriority() const
+{
+    return Priority;
 }
 
 /*int Pair::getIndexInHeapArr() const {
     return indexInHeapArr;
 }*///TODO check if needed if not can be deleted
 
-void Pair::initializePairFromVertex(Vertex vertex){
-    this->Key = vertex.getVertexNumber();
-    this->Priority = vertex.getMinWeightOfEdgeConnect();
+void Pair::initializePairFromVertex(int i_VertexName, int i_MinWeightOfConnectingEdge){
+    this->Key = i_VertexName;
+    this->Priority = i_MinWeightOfConnectingEdge;
 }
 
 void Pair::setPriority(int priority) {
@@ -26,6 +32,5 @@ void Pair::setPriority(int priority) {
 Pair::Pair(){
     Key = 0;
     Priority = INT32_MAX;
-    vertex = nullptr;
 }
 

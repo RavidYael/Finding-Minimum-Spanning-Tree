@@ -1,12 +1,12 @@
 //
 // Created by Dan Schindler on 29/04/2022.
 //
-
+#pragma once
 #ifndef FINDING_MINIMUM_SPANNING_TREE_DISJOINTSET_H
 #define FINDING_MINIMUM_SPANNING_TREE_DISJOINTSET_H
 #include <iostream>
-#include "UfElement.h"
 #include <vector>
+#include "UfElement.h"
 using namespace std;
 
 class DisjointSet {
