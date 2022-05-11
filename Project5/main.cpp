@@ -5,11 +5,11 @@
 #include <iostream>
 #include "Communicator.h"
 #include "Logic.h"
+
 using namespace std;
 
-void main(int argc, char *argv[]){
-    Logic engine;
-    Communicator fileHandler(argv[1]);
-    engine.buildGraphFromEdgeDataArray(fileHandler.ReadGraphDetailsFromFile())
-}
-
+    void main(int argc, char* argv[]) {
+        Logic engine;
+        Communicator fileHandler(argv[1]);
+        engine.buildGraphFromEdgeDataArray(fileHandler.ReadGraphDetailsFromFile());
+    }

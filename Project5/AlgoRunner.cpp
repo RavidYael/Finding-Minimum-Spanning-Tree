@@ -1,7 +1,5 @@
 #include "AlgoRunner.h"
 #include <iostream>
-#include "DisjointSets.h"
-#include "WeightedGraph.h"
 
 
 using namespace std;
@@ -54,7 +52,7 @@ void AlgoRunner::QuickSort(vector<Edge>& i_EdgeArray, int i_LeftIndex, int i_Rig
     QuickSort(i_EdgeArray, p + 1, i_RightIndex);
 }
 
-bool AlgoRunner::IsConnectedCompont(WeightedGraph& i_Graph)
+bool AlgoRunner::IsConnectedCompont(WeightedGraph i_Graph)
 {
     vector<bool> visitedVertxes;
     visitedVertxes.reserve(i_Graph.GetNumberOfVertexes());
@@ -65,7 +63,7 @@ bool AlgoRunner::IsConnectedCompont(WeightedGraph& i_Graph)
 
 }
 
-void AlgoRunner::DFSUtil(Vertex i_CurrentVertex, vector<bool> i_VisitedVertexes)
+void AlgoRunner::DFSUtil(WeightedGraph i_TheGraph, Vertex i_CurrentVertex, vector<bool> i_VisitedVertexes)
 {
     // Mark the current node as visited
     i_VisitedVertexes[i_CurrentVertex.GetName()] = true;
@@ -73,18 +71,18 @@ void AlgoRunner::DFSUtil(Vertex i_CurrentVertex, vector<bool> i_VisitedVertexes)
     // Recur for all the vertices adjacent to this vertex
     vector<Edge>::iterator EdgeToAdjacent;
     for (EdgeToAdjacent = i_CurrentVertex.GetAllOutEdges().begin(); EdgeToAdjacent != i_CurrentVertex.GetAllOutEdges().end(); ++EdgeToAdjacent)
-        if (!i_VisitedVertexes[(*EdgeToAdjacent).GetDest().GetName()])
-            DFSUtil((*EdgeToAdjacent).GetDest(), i_VisitedVertexes);
+        if (!i_VisitedVertexes[(*EdgeToAdjacent).GetDest()])
+            DFSUtil(i_TheGraph, i_TheGraph.GetVertexByName((*EdgeToAdjacent).GetDest()), i_VisitedVertexes);
 }
 
 
 // The function to do DFS traversal. It uses recursive
 // DFSUtil()
-bool AlgoRunner::DFS(WeightedGraph& i_TheGraph, vector<bool> i_VisitedVertexes)
+void AlgoRunner::DFS(WeightedGraph i_TheGraph, vector<bool> i_VisitedVertexes)
 {
     for (Edge edge : i_TheGraph.GetAllEdges())
-        if (i_VisitedVertexes[edge.GetSrc().GetName()] == false)
-            DFSUtil(edge.GetSrc(), i_VisitedVertexes);
+        if (i_VisitedVertexes[edge.GetSrc()] == false)
+            DFSUtil(i_TheGraph, i_TheGraph.GetVertexByName(edge.GetSrc()), i_VisitedVertexes);
 }
 
 bool AlgoRunner::IsAllVertexesVisitedDuringDFS(vector<bool> i_VisitedVertexAfterDFS) {
@@ -104,7 +102,7 @@ bool AlgoRunner::IsAllVertexesVisitedDuringDFS(vector<bool> i_VisitedVertexAfter
 vector<Edge> AlgoRunner::Kruskal(WeightedGraph& i_Graph)
 {
     vector<Edge> spaningTreeByEdges;
-    DisjointSet connectionComponentsInGraph;
+    DisjointSet connectionComponentsInGraph(i_Graph.GetNumberOfVertexes());
     vector<Vertex> allVertexesInGraph = i_Graph.GetAllVertexes();
     vector<Edge> sortedByWeightEdges = i_Graph.GetAllEdges();
     
@@ -112,14 +110,14 @@ vector<Edge> AlgoRunner::Kruskal(WeightedGraph& i_Graph)
 
     for (Vertex vertrxInGraph : allVertexesInGraph)
     {
-        connectionComponentsInGraph.MakeSet(vertrxInGraph);
+        connectionComponentsInGraph.MakeSet(vertrxInGraph.GetName());
     }
     
     for (Edge edgeInGraph : sortedByWeightEdges)
     {
-        Vertex src = edgeInGraph.GetSrc();
-        Vertex dest = edgeInGraph.GetDest();
-        if (connectionComponentsInGraph.Find(src).GetName() != connectionComponentsInGraph.Find(dest).GetName())
+        int src = edgeInGraph.GetSrc();
+        int dest = edgeInGraph.GetDest();
+        if (connectionComponentsInGraph.Find(src) != connectionComponentsInGraph.Find(dest))
         {
             spaningTreeByEdges.push_back(edgeInGraph);
             connectionComponentsInGraph.UnionBySize(src, dest);
@@ -133,17 +131,18 @@ vector<Edge> AlgoRunner::Prim(WeightedGraph& i_Graph)
     MinHeap minWeightOfInEdgeHeap(i_Graph.GetNumberOfVertexes());
     minWeightOfInEdgeHeap.BuildHeap(i_Graph.GetAllVertexes());
 
-    while (minWeightOfInEdgeHeap.IsNotEmpty()){
-        Vertex currentVertexWithMinWeightOfInedge = minWeightOfInedgeHeap.DeleteMin();
+    while (!minWeightOfInEdgeHeap.IsEmpty()){
+        int NameOfVertexWithMinimumWeightOfInedge = minWeightOfInEdgeHeap.DeleteMin().getKey();
+        Vertex currentVertexWithMinWeightOfInedge = i_Graph.GetVertexByName(NameOfVertexWithMinimumWeightOfInedge);
         vector<Edge> allOutEdgesFromVertex = currentVertexWithMinWeightOfInedge.GetAllOutEdges();
 
         for (Edge outEdge : allOutEdgesFromVertex) {
-            Vertex adjacent = outEdge.GetDest();
-            if ((adjacent.NotInTree()) && (outEdge.GetWeight() < adjacent.getMinWeightOfEdgeConnect())) {
+
+            Vertex adjacent = i_Graph.GetVertexByName(outEdge.GetDest());
+            if ((adjacent.NotInTree()) && (outEdge.GetWeight() < adjacent.GetMinWeightOfEdgeConnect())) {
                 adjacent.SetMinWeightOfEdgeConnect(outEdge.GetWeight());
-                adjacent.SetAdjacentInSpanningTree(currentVertexWithMinWeightOfInedge);
-                adjacent.SetEdgeConnectInSpanningTree(outEdge);
-                minWeightOfInEdgeHeap.DecreaseKey(outEdge.GetWeight());//TODO  #ravid change here that this method will get (name of vertex 1 - n,new weight);
+                adjacent.SetAdjacentInSpanningTree(currentVertexWithMinWeightOfInedge,outEdge);
+                minWeightOfInEdgeHeap.DecreaseKey(NameOfVertexWithMinimumWeightOfInedge,outEdge.GetWeight());
             }
         }
     }
@@ -154,7 +153,7 @@ vector<Edge> AlgoRunner::spaningTreeByEdges(WeightedGraph& i_Graph) {
     vector<Edge> edgesInSpaningTree;
     for (Vertex vertex : i_Graph.GetAllVertexes())
     {
-        edgesInSpaningTree.push_back(vertex.getEdgeConnectInSpanningTree());
+        edgesInSpaningTree.push_back(vertex.GetEdgeConnctInSpanningTree());
     }
     return edgesInSpaningTree;
 }
