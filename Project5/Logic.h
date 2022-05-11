@@ -11,7 +11,7 @@
 
 using namespace std;
 
-class Logic {
+static class Logic {
 private:
     WeightedGraph m_undirectedWeightedGraph;
     AlgoRunner m_algoRunner;

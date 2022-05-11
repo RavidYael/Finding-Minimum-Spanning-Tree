@@ -14,6 +14,7 @@ public:
 		m_DestName = i_DestNumber;
 		m_Weight = i_EdgeWeight;
 	}
+	Edge() = default;
 	int GetSrc() { return m_SrcName; }
 	int GetDest() { return m_DestName; }
 	int GetWeight() { return m_Weight; }
