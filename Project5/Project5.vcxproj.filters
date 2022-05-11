@@ -74,9 +74,6 @@
     <ClInclude Include="DisjointSet.h">
       <Filter>Header Files\Logic\DataStructures\DisjointSet</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Logic.h">
       <Filter>Header Files\Logic</Filter>
     </ClInclude>

@@ -9,6 +9,11 @@ int Pair::getKey() const {
     return Key;
 }
 
+int Pair::getPriority() const
+{
+    return Priority;
+}
+
 /*int Pair::getIndexInHeapArr() const {
     return indexInHeapArr;
 }*///TODO check if needed if not can be deleted

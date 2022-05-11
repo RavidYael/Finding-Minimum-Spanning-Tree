@@ -1,7 +1,7 @@
 //
 // Created by Dan Schindler on 10/05/2022.
 //
-
+#pragma once
 #include <iostream>
 #include "Communicator.h"
 #include "Logic.h"

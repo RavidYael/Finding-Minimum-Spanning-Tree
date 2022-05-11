@@ -1,7 +1,7 @@
 //
 // Created by Dan Schindler on 30/04/2022.
 //
-
+#pragma once
 #ifndef FINDING_MINIMUM_SPANNING_TREE_UFELEMENT_H
 #define FINDING_MINIMUM_SPANNING_TREE_UFELEMENT_H
 
