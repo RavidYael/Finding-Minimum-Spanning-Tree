@@ -5,7 +5,7 @@
 #include "MinHeap.h"
 
 MinHeap::MinHeap(int Max) {
-    data = new Pair[Max];
+    data.reserve(Max);
     vertexIndexesInHeap = new int[Max];
     maxSize = Max;
     heapSize = 0;
@@ -14,16 +14,14 @@ MinHeap::MinHeap(int Max) {
 
 MinHeap::~MinHeap() {//TODO make sure allocated memory get deleted;
     if (isAllocated){
-        delete[] data;
         delete[] vertexIndexesInHeap;
-        data = nullptr;
         isAllocated = false;
         heapSize = 0;
     }
 }
 
 void MinHeap::BuildHeap(vector<Vertex> graphVertexes) {
-    ConvertVertexesIntoPair(graphVertexes);
+    ConvertVertexesIntoPairAndBuildHeapArr(graphVertexes);
     heapSize = maxSize = graphVertexes.size();
     int i = heapSize;
     for(i = heapSize / 2; i >= 0; i--){
@@ -33,9 +31,9 @@ void MinHeap::BuildHeap(vector<Vertex> graphVertexes) {
 
 void MinHeap::ConvertVertexesIntoPairAndBuildHeapArr(vector<Vertex> graphVertexes){
     int counter = 0;
-    for(Vertex curVertex:graphVertexes){
-        data[counter].initializePairFromVertex(curVertex);
-        vertexIndexesInHeap[curVertex.getVertexNumber()] = counter;//initialize vertex indexes in heap array
+    for(Vertex curVertex : graphVertexes){
+        data[counter].initializePairFromVertex(curVertex.GetName(), curVertex.GetMinWeightOfEdgeConnect());
+        vertexIndexesInHeap[curVertex.GetName()] = counter;//initialize vertex indexes in heap array
         counter++;
     }
 }
@@ -62,7 +60,7 @@ Pair MinHeap::Min(){
     return  data[0];
 }
 
-bool MinHeap::isEmpty(){
+bool MinHeap::IsEmpty(){
     if(heapSize == 0){
         return true;
     }
@@ -71,14 +69,14 @@ bool MinHeap::isEmpty(){
 
 void MinHeap::fixMinHeap(int index) {
     if ( ( index > 0 ) && ( data[index].getPriority() < data[Parent(index)].getPriority())) {//check if smaller than parent
-        filterUpward(index);
+        FilterUpward(index);
     }
     else{
-        filterDownward(index);
+        FilterDownward(index);
     }
 }
 
-void MinHeap::filterDownward(int index){//fixHeap as learned in class
+void MinHeap::FilterDownward(int index){//fixHeap as learned in class
     int Max;
     int left = Left(index);
     int right = Right(index);
@@ -98,11 +96,11 @@ void MinHeap::filterDownward(int index){//fixHeap as learned in class
        // data[Max].setIndexInHeapArr(index);
        vertexIndexesInHeap[Max] = index;
         swap(data[index], data[Max]);
-        filterDownward(Max);
+        FilterDownward(Max);
     }
 }
 
-void MinHeap::filterUpward(int index) {//TODO check if working properly because i think that we got points deduct in the data structure projects on this method
+void MinHeap::FilterUpward(int index) {//TODO check if working properly because i think that we got points deduct in the data structure projects on this method
 
     if (index <= 0 || data[Parent(index)].getPriority() < data[index].getPriority())//if parent smaller then me return from recursion
         return;
@@ -113,10 +111,10 @@ void MinHeap::filterUpward(int index) {//TODO check if working properly because 
     vertexIndexesInHeap[Parent(index)] = index;
 
     swap(data[Parent(index)], data[index]);//else swap
-    filterUpward(Parent(index));//recursive call
+    FilterUpward(Parent(index));//recursive call
 }
 
-Pair MinHeap::deleteMin() {
+Pair MinHeap::DeleteMin() {
     Pair min = data[0];
     heapSize--;
     data[0] = data[heapSize];
@@ -125,7 +123,7 @@ Pair MinHeap::deleteMin() {
     return min;
 }
 
-/*void MinHeap::insert(Pair& Item){
+/*void MinHeap::Insert(Pair& Item){
     int curSize = heapSize;
     heapSize++;
 

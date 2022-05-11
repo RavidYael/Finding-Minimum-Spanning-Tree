@@ -4,15 +4,16 @@
 
 #ifndef FINDING_MINIMUM_SPANNING_TREE_MINHEAP_H
 #define FINDING_MINIMUM_SPANNING_TREE_MINHEAP_H
-#include "Pair.h"
 #include <iostream>
 #include "vector"
+#include "Pair.h"
+#include "Vertex.h"
 
 using namespace std;
 
 class MinHeap {
 private:
-    Pair* data;
+    vector<Pair> data;
     int maxSize;
     int heapSize;
     bool isAllocated;
@@ -28,13 +29,13 @@ public:
     static int Left(int index);
     static int Right(int index);
     void BuildMinHeap();
-    bool isEmpty();
+    bool IsEmpty();
     void DecreaseKey(int index,int newKey);//TODO impel this method maybe its the same as deleteItem method that already implemented.
-    Pair deleteMin();
+    Pair DeleteMin();
     void fixMinHeap(int index);
-    void insert(Pair& Item);
-    void filterUpward(int index);//fixHeap as learned in class
-    void filterDownward(int index);//TODO make sure this fix upward working properly
+    void Insert(Pair& Item);
+    void FilterUpward(int index);//fixHeap as learned in class
+    void FilterDownward(int index);//TODO make sure this fix upward working properly
    //void resetSize() { heapSize = 0; }
     Pair Min();
 };

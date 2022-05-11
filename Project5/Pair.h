@@ -4,7 +4,7 @@
 
 #ifndef FINDING_MINIMUM_SPANNING_TREE_PAIR_H
 #define FINDING_MINIMUM_SPANNING_TREE_PAIR_H
-#include "Vertex.h"
+
 
 class Pair {
 private:
@@ -20,7 +20,7 @@ public:
     int getIndexInHeapArr() const;
 
     //Setters
-    void initializePairFromVertex(Vertex vertex);
+    void initializePairFromVertex(int i_VertexName, int i_MinWeightOfConnectingEdge);
 
     void setPriority(int priority);
 

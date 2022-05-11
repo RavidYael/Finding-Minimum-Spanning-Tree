@@ -14,6 +14,7 @@ private:
 	vector<Vertex> m_Vertexes;
 
 public:
+	WeightedGraph();
 	WeightedGraph(int i_NumberOfVertx, int i_NumberOfEdges);
 	~WeightedGraph();
 	void makeEmpty();
@@ -23,8 +24,9 @@ public:
 	const vector<Edge> GetAllEdges() { return m_Edges; }
 	const vector<Vertex> GetAllVertexes() { return m_Vertexes; }
 	int GetNumberOfVertexes() {	return m_NumberOfVertexes; }
-    void SetNumberOfVertexes(int numOfVertexes){ m_NumberOfVertexes = numOfVertexes};
-    void SetNumberOfEdges(int numOfEdges){m_NumberOfEdges = numOfEdges};
+	void SetNumberOfVertexes(int numOfVertexes) { m_NumberOfVertexes = numOfVertexes; }
+	void SetNumberOfEdges(int numOfEdges) { m_NumberOfEdges = numOfEdges; }
+	Vertex GetVertexByName(int i_VertexNumber) { return m_Vertexes[i_VertexNumber]; }
 	
 
 };

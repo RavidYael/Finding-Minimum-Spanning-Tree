@@ -15,12 +15,13 @@ Communicator::~Communicator() {
 
 
 vector<int> Communicator::ReadGraphDetailsFromFile() {//TODO  validate that all edges data is valid int and not float  etc.
-    int tmpEdgeData;
-     inputFile >> tmpEdgeData;
-    edgesData.push_back(tmpEdgeData);
+    int tmpEdgeData, numOfEdges;
+    vector<int> edgesData;
     inputFile >> tmpEdgeData;
     edgesData.push_back(tmpEdgeData);
-    vector<int> edgesData;
+    inputFile >> numOfEdges;
+    edgesData.push_back(numOfEdges);
+
 
      for(int i = 0; i < numOfEdges*3 + 2; i++){
          if(inputFile.peek() != EOF){
@@ -38,17 +39,4 @@ vector<int> Communicator::ReadGraphDetailsFromFile() {//TODO  validate that all 
      return edgesData;
 }
 
-
-
-int Communicator::getNumOfEdges() const {
-    return numOfEdges;
-}
-
-const vector<int> &Communicator::getEdgesData() const {//TODO not sure if if i will return it as ref and the communicator already will go to the dtor the vector will remain accessible. if not change it to return it by val.
-    return edgesData;
-}
-
-int Communicator::getNumOfVertex() const {
-    return numOfVertex;
-}
 
