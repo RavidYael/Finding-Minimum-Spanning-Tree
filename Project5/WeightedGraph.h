@@ -18,11 +18,13 @@ public:
 	~WeightedGraph();
 	void makeEmpty();
 	bool IsAdjacent(Vertex i_src, Vertex i_dest);
-	void AddAdj(Vertex i_src, Vertex i_dest, int i_AdjWeight);
+	void AddEdge(int i_src,int i_dest, int i_AdjWeight);
 	void RemoveAdj(Vertex i_src, Vertex i_dest);
 	const vector<Edge> GetAllEdges() { return m_Edges; }
 	const vector<Vertex> GetAllVertexes() { return m_Vertexes; }
 	int GetNumberOfVertexes() {	return m_NumberOfVertexes; }
+    void SetNumberOfVertexes(int numOfVertexes){ m_NumberOfVertexes = numOfVertexes};
+    void SetNumberOfEdges(int numOfEdges){m_NumberOfEdges = numOfEdges};
 	
 
 };

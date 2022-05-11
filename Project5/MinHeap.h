@@ -23,7 +23,7 @@ public:
     MinHeap(int Max);
     ~MinHeap();
     void BuildHeap(vector<Vertex> graphVertexes);
-    void ConvertVertexesIntoPair(vector<Vertex> graphVertexes);
+    void ConvertVertexesIntoPairAndBuildHeapArr(vector<Vertex> graphVertexes);
     static int Parent(int index);
     static int Left(int index);
     static int Right(int index);
