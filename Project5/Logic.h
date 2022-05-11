@@ -4,11 +4,9 @@
 
 #ifndef FINDING_MINIMUM_SPANNING_TREE_LOGIC_H
 #define FINDING_MINIMUM_SPANNING_TREE_LOGIC_H
-#include <iostream>
-#include "WeightedGraph.h"
+
 #include "AlgoRunner.h"
 
-using namespace std;
 
 class Logic {
 private:

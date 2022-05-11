@@ -10,6 +10,6 @@ using namespace std;
 void main(int argc, char *argv[]){
     Logic engine;
     Communicator fileHandler(argv[1]);
-    engine.buildGraphFromEdgeDataArray(fileHandler.ReadGraphDetailsFromFile())
+    engine.buildGraphFromEdgeDataArray(fileHandler.ReadGraphDetailsFromFile());
 }
 

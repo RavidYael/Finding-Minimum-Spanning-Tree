@@ -11,7 +11,7 @@ private:
 	vector<Vertex> m_AdjacentInGraph;
 	vector<Edge> m_AllOutEdges;
 	Vertex m_AdjacentsInSpanningTree; 
-  Edge m_EdgeConnectInSpanningTree;
+    Edge m_EdgeConnectInSpanningTree;
 	int m_MinWeightOfEdgeConnect = INT32_MAX;
 	bool m_InTree = false;
 

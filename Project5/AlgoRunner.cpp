@@ -103,16 +103,16 @@ bool AlgoRunner::IsAllVertexesVisitedDuringDFS(vector<bool> i_VisitedVertexAfter
 
 vector<Edge> AlgoRunner::Kruskal(WeightedGraph& i_Graph)
 {
-    vector<Edge> spaningTreeByEdges;
+    vector<Edge> spanningTreeByEdges;
     DisjointSet connectionComponentsInGraph;
     vector<Vertex> allVertexesInGraph = i_Graph.GetAllVertexes();
     vector<Edge> sortedByWeightEdges = i_Graph.GetAllEdges();
     
     QuickSort(sortedByWeightEdges, 0, sortedByWeightEdges.size());
 
-    for (Vertex vertrxInGraph : allVertexesInGraph)
+    for (Vertex vertexInGraph : allVertexesInGraph)
     {
-        connectionComponentsInGraph.MakeSet(vertrxInGraph);
+        connectionComponentsInGraph.MakeSet(vertexInGraph);
     }
     
     for (Edge edgeInGraph : sortedByWeightEdges)
@@ -121,11 +121,11 @@ vector<Edge> AlgoRunner::Kruskal(WeightedGraph& i_Graph)
         Vertex dest = edgeInGraph.GetDest();
         if (connectionComponentsInGraph.Find(src).GetName() != connectionComponentsInGraph.Find(dest).GetName())
         {
-            spaningTreeByEdges.push_back(edgeInGraph);
+            spanningTreeByEdges.push_back(edgeInGraph);
             connectionComponentsInGraph.UnionBySize(src, dest);
         }
     }
-    return spaningTreeByEdges;
+    return spanningTreeByEdges;
 }
 
 vector<Edge> AlgoRunner::Prim(WeightedGraph& i_Graph)
