@@ -31,7 +31,7 @@ void MinHeap::BuildHeap(vector<Vertex> graphVertexes) {
     }
 }
 
-void MinHeap::ConvertVertexesIntoPair(vector<Vertex> graphVertexes){
+void MinHeap::ConvertVertexesIntoPairAndBuildHeapArr(vector<Vertex> graphVertexes){
     int counter = 0;
     for(Vertex curVertex:graphVertexes){
         data[counter].initializePairFromVertex(curVertex);
@@ -52,9 +52,21 @@ int MinHeap::Right(int index) {
     return (2 * index + 2);
 }
 
-Pair MinHeap::Min()
-{
+void MinHeap::DecreaseKey(int index,int newKey){//TODO check if this method working accordingly
+    int indexInHeap = vertexIndexesInHeap[index];
+    data[index].setPriority(newKey);
+    fixMinHeap(index);
+}
+
+Pair MinHeap::Min(){
     return  data[0];
+}
+
+bool MinHeap::isEmpty(){
+    if(heapSize == 0){
+        return true;
+    }
+    return false;
 }
 
 void MinHeap::fixMinHeap(int index) {

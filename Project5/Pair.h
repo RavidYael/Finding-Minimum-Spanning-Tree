@@ -10,10 +10,9 @@ class Pair {
 private:
     int Key;//Name of vertex
     int Priority;//Lightest Connective Edge from this vertex into the minimal Spanning tree
-    Vertex vertex;
     //int indexInHeapArr;TODO not sure if needed
 public:
-    Pair() = default;
+    Pair();
     ~Pair() = default;
     //Getters
     int getKey() const;
@@ -22,6 +21,8 @@ public:
 
     //Setters
     void initializePairFromVertex(Vertex vertex);
+
+    void setPriority(int priority);
 
 };
 

@@ -37,6 +37,18 @@
     <Filter Include="Header Files\UI">
       <UniqueIdentifier>{4440c1f7-e488-4b11-b7c9-904737a4370f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Logic\DataStructures\DisjointSet">
+      <UniqueIdentifier>{a52ce9a5-0c39-4c67-95ac-cc049192e216}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Logic\DataStructures\DisjoinSet">
+      <UniqueIdentifier>{8fefef62-6622-4a51-b9cc-938cfe4fb7b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Logic\DataStructures\MinBinaryHeap">
+      <UniqueIdentifier>{4e660208-7f15-4576-ab85-354d56c2b3f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Logic\DataStructures\MinBinaryHeap">
+      <UniqueIdentifier>{b0b37421-5e87-4411-ae45-ad6f6a938cc0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Program.h">
@@ -45,32 +57,32 @@
     <ClInclude Include="Vertex.h">
       <Filter>Header Files\Logic\DataStructures\GraphDS</Filter>
     </ClInclude>
-    <ClInclude Include="BinaryTree.h">
-      <Filter>Header Files\Logic\DataStructures</Filter>
-    </ClInclude>
     <ClInclude Include="AlgoRunner.h">
       <Filter>Header Files\Logic</Filter>
     </ClInclude>
     <ClInclude Include="Communicator.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
-    <ClInclude Include="DisjointSets.h">
-      <Filter>Header Files\Logic\DataStructures</Filter>
-    </ClInclude>
     <ClInclude Include="Edge.h">
       <Filter>Header Files\Logic\DataStructures\GraphDS</Filter>
-    </ClInclude>
-    <ClInclude Include="EdgeSet.h">
-      <Filter>Header Files\Logic\DataStructures</Filter>
     </ClInclude>
     <ClInclude Include="WeightedGraph.h">
       <Filter>Header Files\Logic\DataStructures\GraphDS</Filter>
     </ClInclude>
+    <ClInclude Include="DisjointSets.h">
+      <Filter>Header Files\Logic\DataStructures\DisjointSet</Filter>
+    </ClInclude>
+    <ClInclude Include="UfElement.h">
+      <Filter>Header Files\Logic\DataStructures\DisjointSet</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHeap.h">
+      <Filter>Header Files\Logic\DataStructures\MinBinaryHeap</Filter>
+    </ClInclude>
+    <ClInclude Include="Pair.h">
+      <Filter>Header Files\Logic\DataStructures\MinBinaryHeap</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BinaryTree.cpp">
-      <Filter>Source Files\Logic\DataStructures</Filter>
-    </ClCompile>
     <ClCompile Include="Vertex.cpp">
       <Filter>Source Files\Logic\DataStructures\GraphDS</Filter>
     </ClCompile>
@@ -83,17 +95,23 @@
     <ClCompile Include="Program.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DisjointSets.cpp">
-      <Filter>Source Files\Logic\DataStructures</Filter>
-    </ClCompile>
     <ClCompile Include="Edge.cpp">
       <Filter>Source Files\Logic\DataStructures\GraphDS</Filter>
     </ClCompile>
-    <ClCompile Include="EdgeSet.cpp">
-      <Filter>Source Files\Logic\DataStructures</Filter>
-    </ClCompile>
     <ClCompile Include="WeightedGraph.cpp">
       <Filter>Source Files\Logic\DataStructures\GraphDS</Filter>
+    </ClCompile>
+    <ClCompile Include="DisjointSets.cpp">
+      <Filter>Source Files\Logic\DataStructures\DisjoinSet</Filter>
+    </ClCompile>
+    <ClCompile Include="UfElement.cpp">
+      <Filter>Source Files\Logic\DataStructures\DisjoinSet</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHeap.cpp">
+      <Filter>Source Files\Logic\DataStructures\MinBinaryHeap</Filter>
+    </ClCompile>
+    <ClCompile Include="Pair.cpp">
+      <Filter>Source Files\Logic\DataStructures\MinBinaryHeap</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
