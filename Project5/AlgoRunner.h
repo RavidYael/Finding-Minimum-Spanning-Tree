@@ -1,10 +1,10 @@
 #pragma once
 using namespace std;
 #include <vector>
+#include <iostream>
 #include "WeightedGraph.h"
 #include "DisjointSet.h"
 #include "MinHeap.h"
-#include <iostream>
 
 
 class AlgoRunner

@@ -1,7 +1,6 @@
 #pragma once
-#include "Vertex.h"
-#include "Edge.h"
 #include <vector>
+#include "Vertex.h"
 using namespace std;
 
 
@@ -14,13 +13,7 @@ private:
 	vector<Vertex> m_Vertexes;
 
 public:
-	WeightedGraph();
-	WeightedGraph(int i_NumberOfVertx, int i_NumberOfEdges);
-	~WeightedGraph();
-	void makeEmpty();
-	bool IsAdjacent(Vertex i_src, Vertex i_dest);
 	void AddEdge(int i_src,int i_dest, int i_AdjWeight);
-	void RemoveAdj(Vertex i_src, Vertex i_dest);
 	const vector<Edge> GetAllEdges() { return m_Edges; }
 	const vector<Vertex> GetAllVertexes() { return m_Vertexes; }
 	int GetNumberOfVertexes() {	return m_NumberOfVertexes; }
